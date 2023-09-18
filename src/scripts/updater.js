@@ -62,7 +62,7 @@ export const updateFriendsFile = async () => {
 
     const jsonOject = JSON.stringify(friends, null, 4)
 
-    exec('git pull',
+    exec('git pull origin master',
         (error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
