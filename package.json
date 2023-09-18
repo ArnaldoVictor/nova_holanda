@@ -1,0 +1,15 @@
+{
+  "name": "nova_holanda",
+  "version": "1.0.0",
+  "description": "Public repository with tools for NoVa HoLaNDa guild on NTO Ultimate",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Arnaldo Victor",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "jsdom": "^22.1.0"
+  }
+}
