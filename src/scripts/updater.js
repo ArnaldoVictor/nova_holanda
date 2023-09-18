@@ -62,12 +62,21 @@ export const updateFriendsFile = async () => {
 
     const jsonOject = JSON.stringify(friends, null, 4)
 
+    exec('git pull',
+        (error, stdout, stderr) => {
+            console.log(stdout);
+            console.log(stderr);
+            if (error !== null) {
+                console.log(`exec error: ${error}`);
+            }
+        });
+
     fs.writeFile('./src/data/friends.json', jsonOject, 'utf8', (err) => {
         if (err)
             console.log(err)
     })
 
-    exec('../utils/bash/git_push.sh',
+    exec('./src/utils/bash/git_push.sh',
         (error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
