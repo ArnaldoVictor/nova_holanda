@@ -1,6 +1,6 @@
-const axios = require('axios')
-const { JSDOM } = require('jsdom')
-const fs = require('fs')
+import axios from 'axios'
+import { JSDOM } from 'jsdom'
+import fs from 'fs'
 
 const baseUrl = 'https://www.ntoultimate.com.br'
 const uriNovaHolanda = `${baseUrl}/guilds.php?name=NoVa%20HoLaNDa`
@@ -67,5 +67,3 @@ const updateFriendsFile = async () => {
     })
 
 }
-
-updateFriendsFile()
