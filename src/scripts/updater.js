@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { JSDOM } from 'jsdom'
+import { exec } from 'child_process'
 import fs from 'fs'
 
 const baseUrl = 'https://www.ntoultimate.com.br'
@@ -55,7 +56,7 @@ const getAllFriends = async () => {
 }
 
 
-const updateFriendsFile = async () => {
+export const updateFriendsFile = async () => {
     
     const friends = await getAllFriends()
 
@@ -66,4 +67,12 @@ const updateFriendsFile = async () => {
             console.log(err)
     })
 
+    exec('../utils/bash/git_push.sh',
+        (error, stdout, stderr) => {
+            console.log(stdout);
+            console.log(stderr);
+            if (error !== null) {
+                console.log(`exec error: ${error}`);
+            }
+        });
 }
