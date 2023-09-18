@@ -7,13 +7,11 @@ WORKDIR /app
 RUN git config --global user.email "arnaldovictorm@gmail.com"
 RUN git config --global user.name "Arnaldo Victor"
 
-COPY . /app/nova_holanda
+RUN git clone https://github.com/ArnaldoVictor/nova_holanda.git
 
 WORKDIR /app/nova_holanda
 
 RUN git init
-
-RUN git remote add origin https://github.com/ArnaldoVictor/nova_holanda.git
 
 RUN git pull origin master
 
